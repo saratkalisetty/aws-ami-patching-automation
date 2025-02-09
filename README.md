@@ -18,16 +18,28 @@ This project automates **EC2 instance patching, AMI creation, and cleanup** usin
 2️⃣ Attach the correct **IAM roles**  
 3️⃣ Set up **AWS EventBridge** to run on a schedule
 
-## 🔹 IAM Permissions Required for Lambda
-To ensure proper execution, your **Lambda function IAM Role** should have:
-- ✅ **EC2 permissions** → Start, stop, create AMIs, and delete old AMIs
-- ✅ **SSM permissions** → Execute commands on EC2 instances
-- ✅ **SNS permissions** → Send notifications to an SNS topic
-- ✅ **IAM PassRole** → Allow EC2 to assume its instance profile
+## **🔹 IAM Permissions Required**
+Your Lambda function and EC2 instance need the following permissions:  
 
-🔗 **See the full IAM policy template in AWS Docs or create your own using the AWS Policy Generator.**
+### **1️⃣ Lambda IAM Role (LambdaAMIManagementRole)**
+✅ **EC2 permissions** → Manage instances, create AMIs, and delete old AMIs  
+✅ **SSM permissions** → Run patching commands on EC2 instances  
+✅ **SNS permissions** → Send notifications to an SNS topic  
+✅ **IAM PassRole** → Allow EC2 to assume its instance profile  
 
+📌 **Full IAM Policy for Lambda:**  
+🔗 [Lambda IAM Role Policy](https://github.com/saratkalisetty/aws-ami-patching-automation/blob/main/iam/lambda_role.json)  
 
+### **2️⃣ EC2 IAM Role (EC2SSMRole)**
+✅ **SSM permissions** → Execute patching commands and retrieve system info  
+✅ **EC2 Describe permissions** → View instance details  
+
+📌 **Full IAM Policy for EC2:**  
+🔗 [EC2 SSM Role Policy](https://github.com/saratkalisetty/aws-ami-patching-automation/blob/main/iam/ec2_ssm_role.json)  
+
+---
 🔗 **Read the full tutorial on Medium** 👉 [My Medium Post](https://medium.com/your-medium-link)  
 
 🚀 **Star & Fork this repo if you found it helpful!** ⭐  
+
+📩 Contributions are welcome! Feel free to submit a PR with improvements.
