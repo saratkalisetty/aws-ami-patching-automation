@@ -16,7 +16,17 @@ This project automates **EC2 instance patching, AMI creation, and cleanup** usin
 ## 📌 Setup Instructions
 1️⃣ Deploy the **Lambda function**  
 2️⃣ Attach the correct **IAM roles**  
-3️⃣ Set up **AWS EventBridge** to run on a schedule  
+3️⃣ Set up **AWS EventBridge** to run on a schedule
+
+## 🔹 IAM Permissions Required for Lambda
+To ensure proper execution, your **Lambda function IAM Role** should have:
+- ✅ **EC2 permissions** → Start, stop, create AMIs, and delete old AMIs
+- ✅ **SSM permissions** → Execute commands on EC2 instances
+- ✅ **SNS permissions** → Send notifications to an SNS topic
+- ✅ **IAM PassRole** → Allow EC2 to assume its instance profile
+
+🔗 **See the full IAM policy template in AWS Docs or create your own using the AWS Policy Generator.**
+
 
 🔗 **Read the full tutorial on Medium** 👉 [My Medium Post](https://medium.com/your-medium-link)  
 
