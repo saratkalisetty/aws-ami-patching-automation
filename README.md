@@ -38,7 +38,7 @@ Your Lambda function and EC2 instance need the following permissions:
 🔗 [EC2 SSM Role Policy](https://github.com/saratkalisetty/aws-ami-patching-automation/blob/main/iam/ec2_ssm_role.json)  
 
 ---
-🔗 **Read the full tutorial on Medium** 👉 [My Medium Post](https://medium.com/your-medium-link)  
+🔗 **Read the full tutorial on Medium** 👉 [My Medium Post](https://medium.com/@sarathkalisetty/automating-aws-ami-patching-using-lambda-ssm-and-sns-notifications-e15a21d0ed12)  
 
 🚀 **Star & Fork this repo if you found it helpful!** ⭐  
 
